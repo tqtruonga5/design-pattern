@@ -7,15 +7,17 @@ import java.util.List;
  * Created by truong on 12/06/2017.
  */
 public class Computer implements ComputerPart {
-    List<ComputerPart> parts;
+    private List<ComputerPart> parts;
 
-    public Computer() {
+    Computer() {
         this.parts = Arrays.asList(new Monitor(), new Mouse(), new KeyBoard());
     }
 
     @Override
     public void accept(ComputerPartVisitor computerPartVisitor) {
-        this.parts.forEach(part -> part.accept(computerPartVisitor));
+        for (ComputerPart part : this.parts) {
+            part.accept(computerPartVisitor);
+        }
         computerPartVisitor.visit(this);
     }
 }

@@ -1,4 +1,6 @@
-package com.designpattern.behavior.visitor;
+package com.designpattern.behavior.visitor.visitors;
+
+import com.designpattern.behavior.visitor.*;
 
 /**
  * Created by truong on 12/06/2017.
@@ -22,6 +24,5 @@ public class ComputerPartDisplayVisitor implements ComputerPartVisitor {
     @Override
     public void visit(Monitor monitor) {
         System.out.println("display monitor");
-
     }
 }
